@@ -17,7 +17,7 @@ export default function Home() {
           <li>
             Hello React Next Get started by editing <code>app/page.tsx</code>.
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>React Save and see your changes instantly.</li>
         </ol>
 
         <div className={styles.ctas}>

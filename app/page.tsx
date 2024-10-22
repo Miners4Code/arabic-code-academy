@@ -1,4 +1,4 @@
-"use client";  // This makes the component a Client Component
+"use client"; 
 
 import { useState, useEffect } from "react";
 
@@ -7,19 +7,18 @@ export default function Home() {
 
   useEffect(() => {
     const today = new Date();
-    const startDate = new Date("2024-10-22"); // Start date: 22/10/2024
-    const endDate = new Date("2024-10-25"); // End date: 25/10/2024
+    const startDate = new Date("2024-10-22"); 
+    const endDate = new Date("2024-10-25"); 
 
-    // Check if today is within the range (inclusive)
     if (today >= startDate && today <= endDate) {
       setShowComponent(true);
     } else {
       setShowComponent(false);
     }
-  }, []); // Run only once when the component mounts
+  }, []); 
 
   if (!showComponent) {
-    return null; // Do not render the component if it's outside the date range
+    return null; 
   }
 
   return (

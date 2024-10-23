@@ -7,7 +7,7 @@ export default function Home() {
   const endDate = new Date("2024-10-25")
   const currentDate = new Date()
   useEffect(() => {
-    if (currentDate > startDate && currentDate < endDate) {
+    if (currentDate >= startDate && currentDate < endDate) {
       setShow(true)
     } else {
       setShow(false)
@@ -29,7 +29,6 @@ export default function Home() {
           </h3>
         </div>
       }
-
     </div>
   );
 }

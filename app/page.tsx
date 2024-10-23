@@ -7,6 +7,7 @@ export default function Home() {
   const endDate = new Date("2024-10-25")
   const currentDate = new Date()
   useEffect(() => {
+    // Editing Task 1 
     if (currentDate >= startDate && currentDate < endDate) {
       setShow(true)
     } else {

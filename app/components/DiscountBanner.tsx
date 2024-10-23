@@ -6,7 +6,7 @@ interface Props {
   start: Date;
   end: Date;
 }
-
+// here comments 
 const DiscountBanner: React.FC<Props> = ({ text, start, end }) => {
   if (new Date() < start || new Date() > end) return null;
 

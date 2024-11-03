@@ -1,4 +1,4 @@
-import DiscountBanner from "./components/DiscountBanner";
+import DiscountBanner from "../components/DiscountBanner/DiscountBanner";
 import styles from "./page.module.css";
 
 export default function Home() {

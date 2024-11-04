@@ -5,8 +5,9 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Box>
-          <Button>Hello world</Button>
+        <Box padding={"20"}>
+          <h1>الأكاديمية العربية لتعليم البرمجة</h1>
+          <Button bg={"aca_cyan"}>تسجيل دخول</Button>
         </Box>
       </main>
     </div>

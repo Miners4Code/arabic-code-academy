@@ -10,7 +10,7 @@ const customConfig = defineConfig({
       color: "aca_primary.400",
     },
     "*::selection": {
-      bg: "#bb9bd1"
+      bg: "#bb9bd1",
     },
   },
   theme: {
@@ -23,8 +23,14 @@ const customConfig = defineConfig({
           400: { value: "#783BA2" },
           500: { value: "#462576" },
         },
-        aca_tomato: { value: "#FF6542" },
-        aca_cyan: { value: "#00BE98" },
+        aca_tomato: {
+          400: { value: "#FF6542" },
+          500: { value: "#FA4E27" },
+        },
+        aca_cyan: {
+          400: { value: "#00BE98" },
+          500: { value: "#04B08E" },
+        },
         aca_offwhite: { value: "#EADAC1" },
       },
       fontSizes: {

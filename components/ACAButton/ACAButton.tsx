@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@chakra-ui/react";
+import { buttonRecipe } from "@/theme/buttonRecipe";
 import React from "react";
 
 interface Props {
@@ -8,9 +9,10 @@ interface Props {
   icon?: React.ReactNode;
   weight: "400" | "500" | "600" | "700" | "900";
   bg: "tomato" | "cyan";
+  size?: "lg" | "md" | "sm";
 }
 
-const ACAButton: React.FC<Props> = ({ text, bg, icon, weight }) => {
+const ACAButton: React.FC<Props> = ({ text, bg, icon, weight, size }) => {
   return (
     <Button
       fontWeight={weight}
@@ -18,6 +20,7 @@ const ACAButton: React.FC<Props> = ({ text, bg, icon, weight }) => {
       _hover={{
         bg: `aca_${bg}.500`,
       }}
+      size={size}
     >
       {icon}
       {text}

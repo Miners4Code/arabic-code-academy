@@ -10,6 +10,7 @@ interface Props {
   weight: "400" | "500" | "600" | "700" | "900";
   bg: "tomato" | "cyan";
   size?: "lg" | "md" | "sm";
+
 }
 
 const ACAButton: React.FC<Props> = ({ text, bg, icon, weight, size }) => {
@@ -21,6 +22,7 @@ const ACAButton: React.FC<Props> = ({ text, bg, icon, weight, size }) => {
         bg: `aca_${bg}.500`,
       }}
       size={size}
+
     >
       {icon}
       {text}

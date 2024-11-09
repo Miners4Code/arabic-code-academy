@@ -24,33 +24,25 @@ const PromoText: React.FC<Props> = ({
       alignItems={"center"}
       textAlign={"center"}
       rounded={{
-        base: `tiny`,
-        md: `normal`,
+        base: "tiny",
+        md: "normal",
       }}
       borderWidth={"3px"}
       borderColor={"aca_primary.400"}
-      paddingTop={
-        {
-          base: "10px",
-          md: "64px",
-          lg: "90px"
-        }
-      }
-      paddingBottom={
-        {
-          base: "10px",
-          md: "64px",
-          lg: "30px"
-        }
-      }
-
+      paddingTop={{
+        base: "10px",
+        md: "64px",
+        lg: "90px",
+      }}
+      paddingBottom={{
+        base: "10px",
+        md: "64px",
+        lg: "30px",
+      }}
       backgroundColor={"#FFFEFEE5"}
       boxShadow={"0px 1px 20px 1px #00000040"}
-
     >
-      <Heading as={headingType}
-
-      >{text}</Heading>
+      <Heading as={headingType}>{text}</Heading>
 
       <Text
         fontSize={{

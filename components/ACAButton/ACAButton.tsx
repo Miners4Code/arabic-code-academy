@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@chakra-ui/react";
-import { buttonRecipe } from "@/theme/buttonRecipe";
 import React from "react";
 
 interface Props {

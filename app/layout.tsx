@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Tajawal } from "next/font/google";
 import "./globals.css";
+import { Provider } from "@/components/ui/provider";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
   variable: "--font-tajawal",
-  weight: ["400", "500","700"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -19,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${tajawal.variable}`}>{children}</body>
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
+      <body className={`${tajawal.variable}`}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

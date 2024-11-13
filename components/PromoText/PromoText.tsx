@@ -27,8 +27,6 @@ const PromoText: React.FC<Props> = ({
         base: "tiny",
         md: "normal",
       }}
-      borderWidth={"3px"}
-      borderColor={"aca_primary.400"}
       paddingTop={{
         base: "10px",
         md: "64px",

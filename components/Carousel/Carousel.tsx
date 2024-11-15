@@ -14,9 +14,9 @@ interface Props {
     base: number;
   };
   arrowGaps: {
-    base: `${number}px`;
-    md: `${number}px`;
-    lg: `${number}px`;
+    base: string;
+    md: string;
+    lg: string;
   };
 }
 

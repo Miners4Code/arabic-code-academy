@@ -10,7 +10,6 @@ import More from "@/icons/More"
 import type { StaticImageData } from "next/image";
 
 export const Resources = () => {
-  // Define the CardItem interface
   interface CardItem {
     id: string;
     src: string|StaticImageData;
@@ -24,15 +23,14 @@ export const Resources = () => {
     };
   }
 
-  // Define the card array
   const card: CardItem[] = [
     {
       id: "card1",
       src: eduLogo,
       text: "قاموس المصطلحات التقنية",
       button: {
-        text: "المسارات التعليمية",
-        icon: <More/>, // Replace with the actual icon component if available
+        text: "المزيد...",
+        icon: <More/>,
         bg: "cyan",
         weight: "900",
         size: "md",
@@ -43,8 +41,8 @@ export const Resources = () => {
       src: bookIcon,
       text: "دروس وانماط الميدجورني",
       button: {
-        text: "المسارات التعليمية",
-        icon: <More/>, // Replace with the actual icon component if available
+        text: "المزيد...",
+        icon: <More/>,
         bg: "cyan",
         weight: "900",
         size: "md",
@@ -55,8 +53,8 @@ export const Resources = () => {
       src: testQuiz,
       text: "بنك الأسئلة التقنية",
       button: {
-        text: "المسارات التعليمية",
-        icon: <More/>, // Replace with the actual icon component if available
+        text: "المزيد...",
+        icon: <More/>,
         bg: "cyan",
         weight: "900",
         size: "md",

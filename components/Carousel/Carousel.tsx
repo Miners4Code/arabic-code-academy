@@ -27,10 +27,7 @@ const Carousel: React.FC<Props> = ({
   arrowGaps,
 }) => {
   return (
-    <Box paddingX={{
-      base: "16",
-      md: "28"
-    }}>
+    <Box>
       <Slider
         infinite
         speed={500}

@@ -7,7 +7,7 @@ interface Props {
   children?: React.ReactNode;
   text: string;
   src?: string | StaticImageData;
-  fontType: "primary" | "secondary";
+  fontType: "primary" | "secondary" | "another";
 }
 
 const SimpleCard: React.FC<Props> = ({ children, text, src, fontType }) => {
@@ -18,11 +18,15 @@ const SimpleCard: React.FC<Props> = ({ children, text, src, fontType }) => {
             
 >
         <Box backgroundColor={"aca_primary.400"} 
-             padding={"40px"} 
+             width={{lg:"130px",md:"170px",base:"120px"}}
+             height={{lg:"130px",md:"170px",base:"120px"}}
              marginTop={"60px"} 
              marginBottom={"40px"} 
-             marginX={"100px"} 
-             rounded={"50%"}>
+             marginX={"auto"} 
+             rounded={"50%"}
+             display={"flex"}
+             alignItems={"center"}
+             justifyContent={"center"}>
           {src && (
             <Image
               src={src}

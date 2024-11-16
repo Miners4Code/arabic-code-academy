@@ -8,9 +8,9 @@ interface ArrowProps {
   dir: "left" | "right";
   buttonColor: "white" | "primary";
   arrowsGap: {
-    base: `${number}px`;
-    md: `${number}px`;
-    lg: `${number}px`;
+    base: string;
+    md: string;
+    lg: string;
   };
 }
 

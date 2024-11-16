@@ -72,7 +72,11 @@ const ProductCard: React.FC<Props> = ({
             </Box>
             <Box paddingBottom={"18px"}>
               <Text>{trainer}</Text>
-              <Text>52 فيديو,24 ساعة و45 دقيقة</Text>
+              <Text>
+                {courseDetails.vids}فيديو,
+                 {courseDetails.hours}ساعة و
+                {courseDetails.mins}دقيقة
+              </Text>
             </Box>
           </Card.Body>
           <Card.Footer display="flex" justifyContent="center">

@@ -4,11 +4,8 @@ import CustomIcon from "@/icons/Chalkboard";
 import { Box, Image } from "@chakra-ui/react";
 import eduTrack from "@/assets/eduTrack.jpg";
 import React from "react";
-import { wrap } from "module";
 
-interface Props {}
-
-const EduTracks: React.FC<Props> = ({}) => {
+const EduTracks: React.FC = () => {
   return (
     <Box
       display={"flex"}
@@ -59,7 +56,7 @@ const EduTracks: React.FC<Props> = ({}) => {
             bg="cyan"
             weight="900"
             size="lg"
-          ></ACAButton>
+          />
         </PromoText>
       </Box>
     </Box>

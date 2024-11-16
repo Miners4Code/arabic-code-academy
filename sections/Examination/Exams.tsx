@@ -12,7 +12,7 @@ import RatingCert from "@/icons/RatingCert";
 import ACAButton from "@/components/ACAButton/ACAButton";
 import Notes from "@/icons/Notes";
 
-export const ExaminationSection = () => {
+export const Exams = () => {
   return (
     <Flex
       bgGradient={"to-l"}
@@ -96,4 +96,4 @@ export const ExaminationSection = () => {
   );
 };
 
-export default ExaminationSection;
+export default Exams;

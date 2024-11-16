@@ -41,7 +41,10 @@ const SimpleCard: React.FC<Props> = ({ children, text, src, fontType }) => {
           md: `${fontType}.tb`,
           lg: `${fontType}.dt`,
           }}
-          marginBottom={"40px"}>{text}</Text>
+          marginBottom={"40px"}
+          >
+            {text}
+          </Text>
         {children}
       </Flex>
     );

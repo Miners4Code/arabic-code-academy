@@ -6,6 +6,7 @@ import bookIcon from "@/assets/bookIcon.png";
 import testQuiz from "@/assets/testQuiz.png";
 import SimpleCard from "@/components/SimpleCard/SimpleCard";
 import ACAButton from "@/components/ACAButton/ACAButton";
+import More from "@/icons/More"
 import type { StaticImageData } from "next/image";
 
 export const Resources = () => {
@@ -31,7 +32,7 @@ export const Resources = () => {
       text: "قاموس المصطلحات التقنية",
       button: {
         text: "المسارات التعليمية",
-        icon: "", // Replace with the actual icon component if available
+        icon: <More/>, // Replace with the actual icon component if available
         bg: "cyan",
         weight: "900",
         size: "md",
@@ -43,7 +44,7 @@ export const Resources = () => {
       text: "دروس وانماط الميدجورني",
       button: {
         text: "المسارات التعليمية",
-        icon: "", // Replace with the actual icon component if available
+        icon: <More/>, // Replace with the actual icon component if available
         bg: "cyan",
         weight: "900",
         size: "md",
@@ -55,7 +56,7 @@ export const Resources = () => {
       text: "بنك الأسئلة التقنية",
       button: {
         text: "المسارات التعليمية",
-        icon: "", // Replace with the actual icon component if available
+        icon: <More/>, // Replace with the actual icon component if available
         bg: "cyan",
         weight: "900",
         size: "md",

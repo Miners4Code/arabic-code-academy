@@ -1,11 +1,125 @@
 "use client";
 
-import Carousel from "@/components/Carousel/Carousel";
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
+import ProductCard from "@/components/ProductCard/ProductCard";
+import CardIcon from "@/icons/CardIcon";
+import PythonIcon from "@/icons/PythonIcon";
+import JavaIcon from "@/icons/JavaIcon";
+import HTMLIcon from "@/icons/HTMLIcon";
+import Diamond from "@/icons/Diamond";
+import Bootstrap from "@/icons/Bootstrap";
+import CSharpIcon from "@/icons/CSharpIcon";
+import PHPIcon from "@/icons/PHPIcon";
+import CoursesSlider from "./CoursesSlider";
+import UpcomingSlider from "./UpcomingSlider";
 
 const Products: React.FC = () => {
-  const cources = ["course1", "course2", "course3", "course4"];
+  const cources = [
+    {
+      id: 1,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <CardIcon />,
+      soon: false,
+      price: 24,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+    {
+      id: 2,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <PythonIcon />,
+      soon: false,
+      price: 24,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+    {
+      id: 3,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <JavaIcon />,
+      soon: false,
+      price: 24,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+    {
+      id: 4,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <HTMLIcon />,
+      soon: false,
+      price: 24,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+  ];
+
+  const upcoming = [
+    {
+      id: 1,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <Diamond />,
+      soon: true,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+    {
+      id: 2,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <Bootstrap />,
+      soon: true,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+    {
+      id: 3,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <CSharpIcon />,
+      soon: true,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+    {
+      id: 4,
+      title: "اسم الكورس",
+      trainer: "اسم المدرب",
+      icon: <PHPIcon />,
+      soon: true,
+      courseDetails: {
+        vids: 52,
+        hours: 24,
+        mins: 45,
+      },
+    },
+  ];
 
   return (
     <Box
@@ -21,171 +135,33 @@ const Products: React.FC = () => {
         lg: "50px",
       }}
     >
-      <Flex
-        flexDir={{
-          base: "column-reverse",
-          lg: "row",
-        }}
-        justify={{
-          base: "center",
-          lg: "space-between",
-        }}
-        align={{
-          base: "center",
-          lg: "center",
-        }}
-        gap={{
-          base: "50px",
-        }}
-        paddingX={{
-          base: "16",
-          md: "28",
-        }}
-        marginX={"3"}
-        marginBottom={{
-          base: "20px",
-          md: "20px",
-          lg: "50px",
-        }}
-      >
-        <Flex
-          justify={{
-            base: "center",
-            md: "flex-start",
-          }}
-          width={{
-            base: "100%",
-            lg: "auto",
-          }}
-        >
-          <Heading
-            as={"h3"}
-            textAlign={{
-              base: "center",
-              md: "right",
-            }}
-            width={"fit"}
-            borderBottom={"solid"}
-            borderColor={"aca_primary.500"}
-            paddingEnd={"20px"}
-            paddingStart={{
-              base: "20px",
-              md: "0",
-            }}
-          >
-            الدورات التدريبية
-          </Heading>
-        </Flex>
-        <Box
-          // TODO: this box will be replaced with the search form when it gets merged to the dev branch
-          width={{
-            base: "300px",
-            md: "770px",
-            lg: "720px",
-          }}
-          height={{
-            base: "50px",
-            md: "75px",
-            lg: "65px",
-          }}
-          borderWidth={"2px"}
-          borderColor={"aca_primary.400"}
-          rounded={"full"}
-        ></Box>
-      </Flex>
-      <Carousel
-        arrowGaps={{
-          base: "50px",
-          md: "100px",
-          lg: "90px",
-        }}
-        slidesToShow={{
-          base: 1,
-          md: 2,
-          lg: 4,
-        }}
-      >
+      <CoursesSlider>
         {cources.map((item) => (
-          <Box padding={"3"} key={item}>
-            <Box
-              rounded={"normal"}
-              height={"500px"}
-              border={"1px"}
-              shadow={"aca_shadow.mb"}
-            >
-              {item}
-            </Box>
+          <Box padding={"4"} key={item.id}>
+            <ProductCard
+              soon={false}
+              icon={item.icon}
+              title={item.title}
+              trainer={item.trainer}
+              price={item.price}
+              courseDetails={item.courseDetails}
+            />
           </Box>
         ))}
-      </Carousel>
-      <Flex
-        justify={{
-          base: "center",
-          md: "flex-start",
-        }}
-        width={{
-          base: "100%",
-          lg: "auto",
-        }}
-        marginTop={{
-          base: "30px",
-          md: "100px",
-          lg: "50px",
-        }}
-        marginBottom={{
-          base: "20px",
-          md: "20px",
-          lg: "50px",
-        }}
-        marginX={"3"}
-        paddingX={{
-          base: "16",
-          md: "28",
-        }}
-      >
-        <Heading
-          as={"h3"}
-          textAlign={{
-            base: "center",
-            md: "right",
-          }}
-          width={"fit"}
-          borderBottom={"solid"}
-          borderColor={"aca_primary.500"}
-          paddingEnd={"20px"}
-          paddingStart={{
-            base: "20px",
-            md: "0",
-          }}
-        >
-          قريبا
-        </Heading>
-      </Flex>
-      <Carousel
-        arrowGaps={{
-          base: "50px",
-          md: "100px",
-          lg: "90px",
-        }}
-        slidesToShow={{
-          base: 1,
-          md: 2,
-          lg: 4,
-        }}
-      >
-        {cources.map((item) => (
-          <Box padding={"3"} key={item}>
-            <Box
-              rounded={"normal"}
-              height={"500px"}
-              border={"1px"}
-              shadow={"aca_shadow.mb"}
-            >
-              {item}
-            </Box>
+      </CoursesSlider>
+      <UpcomingSlider>
+        {upcoming.map((item) => (
+          <Box padding={"5"} key={item.id}>
+            <ProductCard
+              soon={true}
+              icon={item.icon}
+              title={item.title}
+              trainer={item.trainer}
+              courseDetails={item.courseDetails}
+            />
           </Box>
         ))}
-      </Carousel>
+      </UpcomingSlider>
     </Box>
   );
 };

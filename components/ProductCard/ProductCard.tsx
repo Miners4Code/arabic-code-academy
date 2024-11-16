@@ -3,18 +3,34 @@ import ACAButton from "../ACAButton/ACAButton";
 import ProductIconMore from "@/icons/ProductIconMore";
 import ProductIconCart from "@/icons/ProductIconCart";
 import ComingSoon from "./ComingSoon";
-import CardIcon from "@/icons/CardIcon";
+import React from "react";
 
-interface Props {
+type Props = {
   soon: boolean;
-}
+  icon: React.ReactNode;
+  title: string;
+  trainer: string;
+  courseDetails: {
+    vids: number;
+    hours: number;
+    mins: number;
+  };
+} & ({ soon: false; price: number } | { soon: true; price?: never });
 
-const ProductCard: React.FC<Props> = ({ soon }) => {
+const ProductCard: React.FC<Props> = ({
+  soon,
+  icon,
+  title,
+  trainer,
+  courseDetails,
+  price,
+}) => {
   return (
     <Box
-      boxShadow={"0px 1px 20px 1px #00000040"}
       borderRadius={"10px"}
       position={"relative"}
+      shadow={"aca_shadow.mb"}
+      dir="rtl"
     >
       {soon && <ComingSoon />}
       <Card.Root overflow={"hidden"}>
@@ -30,7 +46,7 @@ const ProductCard: React.FC<Props> = ({ soon }) => {
           }}
           position="relative"
         >
-          <CardIcon />
+          {icon}
         </Card.Header>
         <Box
           paddingX={{
@@ -51,12 +67,16 @@ const ProductCard: React.FC<Props> = ({ soon }) => {
         >
           <Card.Body color={"aca_primary.400"}>
             <Box display={"flex"} justifyContent={"space-between"}>
-              <Text as={"h3"}>اسم الكورس</Text>
-              <Text as={"h3"}>$24</Text>
+              <Text as={"h3"}>{title}</Text>
+              {!soon && <Text as={"h3"}>${price}</Text>}
             </Box>
             <Box paddingBottom={"18px"}>
-              <Text>اسم المدرب</Text>
-              <Text>52 فيديو,24 ساعة و45 دقيقة</Text>
+              <Text>{trainer}</Text>
+              <Text>
+                {courseDetails.vids}فيديو,
+                 {courseDetails.hours}ساعة و
+                {courseDetails.mins}دقيقة
+              </Text>
             </Box>
           </Card.Body>
           <Card.Footer display="flex" justifyContent="center">

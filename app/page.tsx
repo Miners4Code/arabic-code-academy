@@ -1,15 +1,18 @@
-import ExaminationSection from "@/sections/ExaminationSection";
 import styles from "./page.module.css";
-import EduTracks from "@/sections/EduTracks/EduTracks";
-import Contact from "@/sections/section3/Contact";
-
+import ProductCard from "@/components/ProductCard/ProductCard";
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <ExaminationSection />
-        <EduTracks />
-        <Contact />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "50px"
+          }}
+        >
+          <ProductCard soon={true} />
+        </div>
       </main>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import Exams from "@/sections/Examination/Exams";
 import styles from "./page.module.css";
 import EduTracks from "@/sections/EduTracks/EduTracks";

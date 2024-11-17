@@ -1,6 +1,6 @@
 import Carousel from "@/components/Carousel/Carousel";
 import SearchForm from "@/components/SearchForm/SearchForm";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface Props {
@@ -9,7 +9,14 @@ interface Props {
 
 const CoursesSlider = ({ children }: Props) => {
   return (
-    <>
+    <Box
+      paddingX={{
+        base: "16",
+        md: "8",
+        lg: "16",
+        xl: "28",
+      }}
+    >
       <Flex
         flexDir={{
           base: "column-reverse",
@@ -26,10 +33,7 @@ const CoursesSlider = ({ children }: Props) => {
         gap={{
           base: "50px",
         }}
-        paddingX={{
-          base: "16",
-          md: "28",
-        }}
+        paddingX={"3"}
         marginX={"3"}
         marginBottom={{
           base: "20px",
@@ -76,12 +80,13 @@ const CoursesSlider = ({ children }: Props) => {
         slidesToShow={{
           base: 1,
           md: 2,
-          lg: 4,
+          lg: 3,
+          xl: 4
         }}
       >
         {children}
       </Carousel>
-    </>
+    </Box>
   );
 };
 

@@ -47,7 +47,13 @@ export default function FeedbackCard() {
   ];
   return (
     <div>
-      <Box padding={10}>
+      <Box
+        paddingX={{
+          base: "16",
+          md: "28",
+        }}
+        mb={10}
+      >
         <Carousel
           slidesToShow={{
             base: 1,
@@ -61,8 +67,8 @@ export default function FeedbackCard() {
           }}
         >
           {cards.map((item) => (
-            <Box as={GridItem} key={item.id} paddingX={"2"}>
-              <Card.Root shadow={{ base: "aca_shadow.mb" }}>
+            <Box as={GridItem} key={item.id} padding={"3"}>
+              <Card.Root shadow={{ base: "aca_shadow.mb" }} overflow={"hidden"}>
                 <Box
                   as="div"
                   backgroundImage={`url(${item.curve})`}
@@ -80,7 +86,8 @@ export default function FeedbackCard() {
                       name="Nate Foss"
                       position="absolute"
                       top={{ base: "25px", lg: "40px" }}
-                      left="35%"
+                      left="50%"
+                      translate={"-50% 0"}
                       mb="7"
                     />
                     <Heading
@@ -93,7 +100,7 @@ export default function FeedbackCard() {
                       width={"131"}
                       style={{
                         fontWeight: 900,
-                        fontSize: "24px",
+                        //fontSize: "24px",
                       }}
                     >
                       {item.title}
@@ -109,7 +116,12 @@ export default function FeedbackCard() {
                 >
                   <Card.Description
                     mt={{ base: "1", lg: "5" }}
-                    fontSize={{ base: "19px", lg: "21px" }}
+                    //fontSize={{ base: "19px", lg: "21px" }}
+                    fontSize={{
+                      base: "secondary.mb",
+                      md: "secondary.tb",
+                      lg: "secondary.dt",
+                    }}
                     fontWeight={{ base: "280", lg: "380" }}
                     color="#713488;"
                     lineHeight={{ base: "28px", lg: "30px" }}
@@ -129,7 +141,11 @@ export default function FeedbackCard() {
                     width="100%"
                     justifyContent="space-between"
                     alignItems="center"
-                    gap={{ base: "20", lg: "1" }}
+                    flexDir={{
+                      base: "column-reverse",
+                      md: "row",
+                    }}
+                    gap={{ base: "3", lg: "1" }}
                   >
                     <Flex
                       direction="row"
@@ -141,8 +157,7 @@ export default function FeedbackCard() {
                         as="span"
                         color="#723689"
                         fontWeight="400"
-                        fontSize={{ base: "18px", lg: "18px" }}
-                        marginLeft={{ base: "10px" }}
+                        marginLeft={{ md: "10px" }}
                       >
                         {item.month}
                       </Box>
@@ -159,8 +174,7 @@ export default function FeedbackCard() {
 
                     <HStack
                       justifyContent={{ base: "flex-end", lg: "left" }}
-                      paddingLeft={{ lg: "100px" }}
-                      marginRight={{ base: "10px" }}
+                      marginRight={{ md: "10px" }}
                     >
                       <Image
                         width="20px"

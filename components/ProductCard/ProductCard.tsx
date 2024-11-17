@@ -1,5 +1,4 @@
-import { Box, Card, Text } from "@chakra-ui/react";
-import ACAButton from "../ACAButton/ACAButton";
+import { Box, Button, Card, Text } from "@chakra-ui/react";
 import ProductIconMore from "@/icons/ProductIconMore";
 import ProductIconCart from "@/icons/ProductIconCart";
 import ComingSoon from "./ComingSoon";
@@ -74,26 +73,31 @@ const ProductCard: React.FC<Props> = ({
               <Text>{trainer}</Text>
               <Text>
                 {courseDetails.vids}فيديو,
-                 {courseDetails.hours}ساعة و
-                {courseDetails.mins}دقيقة
+                {courseDetails.hours}ساعة و{courseDetails.mins}دقيقة
               </Text>
             </Box>
           </Card.Body>
           <Card.Footer display="flex" justifyContent="center">
-            <ACAButton
-              text={"اقرأ المزيد"}
-              weight={"500"}
-              bg={"cyan"}
-              size="sm"
-              icon={<ProductIconMore />}
-            />
-            <ACAButton
-              text={soon ? "احجز الان" : "شراء"}
-              weight={"500"}
-              bg={"tomato"}
-              size="sm"
-              icon={<ProductIconCart />}
-            />
+            <Button
+              width={"50%"}
+              height={"55px"}
+              bgColor={"aca_cyan.400"}
+              _hover={{ bgColor: "aca_cyan.500" }}
+              display={"flex"}
+            >
+              <ProductIconMore />
+              اقرأ المزيد
+            </Button>
+            <Button
+              width={"50%"}
+              height={"55px"}
+              bgColor={"aca_tomato.400"}
+              _hover={{ bgColor: "aca_tomato.500" }}
+              display={"flex"}
+            >
+              <ProductIconCart />
+              {soon ? "احجز الان" : "شراء"}
+            </Button>
           </Card.Footer>
         </Box>
       </Card.Root>

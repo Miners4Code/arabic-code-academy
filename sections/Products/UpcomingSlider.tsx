@@ -1,5 +1,5 @@
 import Carousel from "@/components/Carousel/Carousel";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface Props {
@@ -8,7 +8,14 @@ interface Props {
 
 const UpcomingSlider = ({ children }: Props) => {
   return (
-    <>
+    <Box
+      paddingX={{
+        base: "16",
+        md: "8",
+        lg: "16",
+        xl: "28",
+      }}
+    >
       <Flex
         justify={{
           base: "center",
@@ -29,10 +36,7 @@ const UpcomingSlider = ({ children }: Props) => {
           lg: "50px",
         }}
         marginX={"3"}
-        paddingX={{
-          base: "16",
-          md: "28",
-        }}
+        paddingX={"3"}
       >
         <Heading
           as={"h3"}
@@ -61,12 +65,13 @@ const UpcomingSlider = ({ children }: Props) => {
         slidesToShow={{
           base: 1,
           md: 2,
-          lg: 4,
+          lg: 3,
+          xl: 4
         }}
       >
         {children}
       </Carousel>
-    </>
+    </Box>
   );
 };
 

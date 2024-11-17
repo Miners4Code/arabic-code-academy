@@ -9,9 +9,10 @@ interface Props {
   children: React.ReactNode;
   buttonsColor?: "white" | "primary";
   slidesToShow: {
-    lg: number;
-    md: number;
-    base: number;
+    xl?: number;
+    lg?: number;
+    md?: number;
+    base?: number;
   };
   arrowGaps: {
     base: string;
@@ -23,7 +24,12 @@ interface Props {
 const Carousel: React.FC<Props> = ({
   children,
   buttonsColor = "primary",
-  slidesToShow,
+  slidesToShow = {
+    base: 1,
+    md: 2,
+    lg: 3,
+    xl: 0
+  },
   arrowGaps,
 }) => {
   return (
@@ -32,8 +38,14 @@ const Carousel: React.FC<Props> = ({
         infinite
         speed={500}
         slidesToScroll={1}
-        slidesToShow={slidesToShow.lg}
+        slidesToShow={slidesToShow.xl || slidesToShow.lg}
         responsive={[
+          {
+            breakpoint: 1500,
+            settings: {
+              slidesToShow: slidesToShow.lg
+            }
+          },
           {
             breakpoint: 1024,
             settings: {

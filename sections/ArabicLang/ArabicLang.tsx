@@ -13,23 +13,29 @@ const ArabicLang = () => {
         base: "column",
         lg: "row",
       }}
-      paddingY={"300px"}
+      paddingY={{
+        base: "20px",
+        md: "40px",
+        lg: "300px",
+      }}
       paddingX={{
-        base: "50px",
-        md: "200px",
-        lg: "300px"
+        lg: "50px",
       }}
       justify={"center"}
+      align={"center"}
       gap={{
-        base: "10px",
+        base: "20px",
         md: "40px",
         lg: "0px",
       }}
     >
-      <Box
-        width="fit"
+      <Flex
+        maxWidth={{
+          base: "150px",
+          md: "400px",
+        }}
+        justify={"center"}
         marginLeft={{
-          base: "0px",
           lg: "150px",
         }}
       >
@@ -38,30 +44,48 @@ const ArabicLang = () => {
           <Heading
             as={"h2"}
             fontSize={{
-              base: "40px",
+              base: "18px",
               md: "50px",
               lg: "80px",
             }}
             color={"white"}
             textAlign={"center"}
-            marginTop={"80px"}
+            lineHeight={"40px"}
+            marginTop={{
+              base: "20px",
+              md: "55px",
+              lg: "80px",
+            }}
           >
             لغة ضاد
           </Heading>
         </Flex>
-      </Box>
+      </Flex>
       <Box
         width={{
-          base: "100%",
-          lg: "50%",
+          base: "220px",
+          md: "700px",
+          lg: "630px",
         }}
       >
         <Text
           color={"white"}
-          fontSize={"27px"}
-          lineHeight={"40px"}
-          fontWeight={"700"}
-          marginBottom={"40px"}
+          fontSize={{
+            base: "secondary.mb",
+            md: "27px",
+          }}
+          lineHeight={{
+            base: "25px",
+            md: "40px",
+          }}
+          fontWeight={{
+            base: "400",
+            md: "700",
+          }}
+          marginBottom={{
+            base: "0px",
+            md: "40px",
+          }}
           textAlign={{
             base: "center",
             lg: "start",
@@ -80,6 +104,7 @@ const ArabicLang = () => {
             base: "auto",
             lg: "0px",
           }}
+          mt={{ base: "20px" }}
         >
           <ACAButton
             size="md"

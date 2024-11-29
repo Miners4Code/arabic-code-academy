@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 
 const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
               </button>
             </a>
             <a href="/login">
-              <button className={styles.loginButton}>
+              <button className={styles.loginButton} onClick={() => setIsLoggedIn(true)}>
                 <img
                   src="login.png"
                   alt="Login Icon"

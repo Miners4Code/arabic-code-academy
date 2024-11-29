@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex, Heading } from "@chakra-ui/react";
 
 interface Props {
   slide_data: {
@@ -22,13 +22,14 @@ const HeaderSlide: React.FC<Props> = ({ slide_data, children }) => {
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
+      position={"relative"}
     >
       <Box
         position="absolute"
         inset={0}
         width="100%"
         height="100%"
-        bg="#29262633"
+        bgColor="#783BA242"
         zIndex={1}
       />
       <Box
@@ -50,13 +51,17 @@ const HeaderSlide: React.FC<Props> = ({ slide_data, children }) => {
       >
         <Box
           width={{ lg: "440px", md: "480px", base: "200px" }}
-          lineHeight={{ lg: "48px", md: "60px", base: "30px" }}
-          marginX={"auto"}
+          marginX={{base: "auto", lg: "0"}}
+          marginY={{ lg: "auto" }}
           marginBottom={{ base: "55px" }}
         >
-          <Text as="h1" color={"white"}>
+          <Heading
+            as="h1"
+            color={"white"}
+            lineHeight={{ lg: "48px", md: "60px", base: "30px" }}
+          >
             {slide_data.description}
-          </Text>
+          </Heading>
         </Box>
         <Box
           width={{ lg: "440px", md: "650px", base: "300px" }}
@@ -70,9 +75,10 @@ const HeaderSlide: React.FC<Props> = ({ slide_data, children }) => {
             align={{
               base: "center",
               md: "center",
+              lg: "start"
             }}
           >
-            <Box marginTop={{ base: "55px" }}>
+            <Box marginTop={{ base: "55px", lg: "0" }}>
               <Text as="h3" color={"white"} paddingBottom={"40px"}>
                 {slide_data.sub_description1}
               </Text>

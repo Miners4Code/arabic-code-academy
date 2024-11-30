@@ -25,23 +25,23 @@ const CarouselArrow: React.FC<ArrowProps> = ({
       display={"block"}
       onClick={onClick}
       pos={"absolute"}
+      zIndex={1000}
       top={"50%"}
-      //right={dir === "right" ? "-90px" : "auto"}
       right={
         dir === "right"
           ? {
-              base: `-${arrowsGap.base}`,
-              md: `-${arrowsGap.md}`,
-              lg: `-${arrowsGap.lg}`,
+              base: `${arrowsGap.base}`,
+              md: `${arrowsGap.md}`,
+              lg: `${arrowsGap.lg}`,
             }
           : "auto"
       }
       left={
         dir === "left"
           ? {
-              base: `-${arrowsGap.base}`,
-              md: `-${arrowsGap.md}`,
-              lg: `-${arrowsGap.lg}`,
+              base: `${arrowsGap.base}`,
+              md: `${arrowsGap.md}`,
+              lg: `${arrowsGap.lg}`,
             }
           : "auto"
       }

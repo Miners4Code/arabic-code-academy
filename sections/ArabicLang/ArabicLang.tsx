@@ -4,11 +4,12 @@ import Image from "next/image";
 import React from "react";
 import datLang from "@/assets/dat-lang.png";
 import Document from "@/icons/Document";
+import BgVideo from "./BgVideo";
 
 const ArabicLang = () => {
   return (
     <Flex
-      bgImg={"url(/arabic-language-section.png)"}
+      className="wrapper-test"
       flexDir={{
         base: "column",
         lg: "row",
@@ -16,7 +17,7 @@ const ArabicLang = () => {
       paddingY={{
         base: "20px",
         md: "40px",
-        lg: "300px",
+        lg: "280px",
       }}
       paddingX={{
         lg: "50px",
@@ -28,6 +29,9 @@ const ArabicLang = () => {
         md: "40px",
         lg: "0px",
       }}
+      pos="relative"
+      overflow={"hidden"}
+      background={"transparent"}
     >
       <Flex
         maxWidth={{
@@ -39,7 +43,14 @@ const ArabicLang = () => {
           lg: "150px",
         }}
       >
-        <Flex justify={"center"} flexDir={"column"} align={"center"}>
+        <BgVideo />
+        <Flex
+          justify={"center"}
+          flexDir={"column"}
+          align={"center"}
+          pos={"relative"}
+          zIndex={1}
+        >
           <Image src={datLang} alt="Arabic language" />
           <Heading
             as={"h2"}
@@ -62,6 +73,8 @@ const ArabicLang = () => {
         </Flex>
       </Flex>
       <Box
+        pos={"relative"}
+        zIndex={10}
         width={{
           base: "220px",
           md: "700px",

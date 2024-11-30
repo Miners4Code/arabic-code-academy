@@ -1,12 +1,10 @@
 import ArabicLang from "@/sections/ArabicLang/ArabicLang";
-import styles from "./page.module.css";
+import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <ArabicLang />
-      </main>
-    </div>
+    <Flex flexDir={"column"} gap={"32px"} gridRowStart={2}>
+      <ArabicLang />
+    </Flex>
   );
 }

@@ -1,15 +1,16 @@
-import styles from "./page.module.css";
-// import Feedback from "@/components/FeedbackCard/Feedback-card";
+import Navbar from "@/sections/Navbar/Navbar"
+import Hero from "@/sections/Hero/Hero";
+import ArabicLang from "@/sections/ArabicLang/ArabicLang";
 import Footer from "@/sections/Footer/Footer";
-// import Products from "@/sections/Products/Products";
-// import Resources from "@/sections/Resources/Resources";
+import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Footer />
-      </main>
-    </div>
+    <Flex as={"main"} flexDir={"column"} gap={"32px"} gridRowStart={2}>
+      <Navbar />
+      <Hero />
+      <ArabicLang />
+      <Footer />
+    </Flex>
   );
 }

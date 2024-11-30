@@ -8,7 +8,7 @@ import CarouselArrow from "./CarouselArrow";
 interface Props {
   children: React.ReactNode;
   buttonsColor?: "white" | "primary";
-  slidesToShow: {
+  slidesToShow?: {
     xl?: number;
     lg?: number;
     md?: number;
@@ -26,8 +26,8 @@ const Carousel: React.FC<Props> = ({
   buttonsColor = "primary",
   slidesToShow = {
     base: 1,
-    md: 2,
-    lg: 3,
+    md: 1,
+    lg: 1,
     xl: 0
   },
   arrowGaps,

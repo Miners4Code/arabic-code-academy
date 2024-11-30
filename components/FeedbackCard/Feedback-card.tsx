@@ -100,7 +100,6 @@ export default function FeedbackCard() {
                       width={"131"}
                       style={{
                         fontWeight: 900,
-                        //fontSize: "24px",
                       }}
                     >
                       {item.title}
@@ -116,7 +115,6 @@ export default function FeedbackCard() {
                 >
                   <Card.Description
                     mt={{ base: "1", lg: "5" }}
-                    //fontSize={{ base: "19px", lg: "21px" }}
                     fontSize={{
                       base: "secondary.mb",
                       md: "secondary.tb",

@@ -1,16 +1,10 @@
-import styles from "./page.module.css";
-import Feedback from "@/Card/Feedback-card";
-import Products from "@/sections/Products/Products";
-import Resources from "@/sections/Resources/Resources";
+import ArabicLang from "@/sections/ArabicLang/ArabicLang";
+import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Resources />
-        <Products />
-        <Feedback />
-      </main>
-    </div>
+    <Flex flexDir={"column"} gap={"32px"} gridRowStart={2}>
+      <ArabicLang />
+    </Flex>
   );
 }

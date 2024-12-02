@@ -69,19 +69,29 @@ const CoursesSlider = ({ children }: Props) => {
             الدورات التدريبية
           </Heading>
         </Flex>
-        <SearchForm placeholder="مقدمة لمحرك األعاب اليونتي" />
+        <SearchForm
+          placeholder="مقدمة لمحرك األعاب اليونتي"
+          width={{
+            md: "100%",
+          }}
+        />
       </Flex>
       <Carousel
         arrowGaps={{
-          base: "50px",
-          md: "100px",
-          lg: "90px",
+          base: "-50px",
+          md: "-100px",
+          lg: "-90px",
+        }}
+        width={{
+          base: "300px",
+          md: "auto",
+          lg: "auto",
         }}
         slidesToShow={{
           base: 1,
           md: 2,
           lg: 3,
-          xl: 4
+          xl: 4,
         }}
       >
         {children}

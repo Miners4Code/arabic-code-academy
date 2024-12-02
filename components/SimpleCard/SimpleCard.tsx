@@ -33,7 +33,9 @@ const SimpleCard: React.FC<Props> = ({ children, text, src, fontType }) => {
           md: `${fontType}.tb`,
           lg: `${fontType}.dt`,
         }}
-        marginBottom={"40px"}
+        height={"70px"}
+        textAlign={"center"}
+        marginBottom={"10px"}
       >
         {text}
       </Text>

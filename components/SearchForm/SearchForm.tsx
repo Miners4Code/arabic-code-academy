@@ -1,41 +1,37 @@
 "use client";
 
-import { Button, Fieldset, Flex, Input } from "@chakra-ui/react";
+import { Box, Button, Fieldset, Flex, Input } from "@chakra-ui/react";
 import React from "react";
 import { Field } from "../ui/field";
 import SearchLens from "@/icons/SearchLens";
 
 interface Props {
-  //searchQuery?: string;
-  //setSearchQuery?: (value: string) => void;
   placeholder: string;
+  width?: {
+    base?: string;
+    md?: string;
+    lg?: string;
+  };
 }
 
-const SearchForm: React.FC<Props> = ({
-  placeholder,
-  //searchQuery,
-  //setSearchQuery,
-}) => {
-  //const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //  setSearchQuery(event.target.value);
-  //};
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    //console.log(searchQuery);
-  };
-
+const SearchForm: React.FC<Props> = ({ placeholder, width }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <Box
+      as={"form"}
+      width={{
+        base: width?.base ?? "300px",
+        md: width?.md ?? "770px",
+        lg: width?.lg ?? "720px",
+      }}
+    >
       <Fieldset.Root>
         <Fieldset.Content>
           <Field>
             <Flex
               width={{
-                base: "300px",
-                md: "770px",
-                lg: "720px",
+                base: width?.base ?? "300px",
+                md: width?.md ?? "770px",
+                lg: width?.lg ?? "720px",
               }}
             >
               <Input
@@ -55,8 +51,6 @@ const SearchForm: React.FC<Props> = ({
                 roundedLeft={"none"}
                 roundedRight={"full"}
                 paddingX={"10px"}
-                //value={searchQuery}
-                //onChange={handleChange}
               />
 
               <Flex
@@ -76,7 +70,6 @@ const SearchForm: React.FC<Props> = ({
                 roundedLeft={"full"}
               >
                 <Button
-                  type="submit"
                   width={"inherit"}
                   height={"inherit"}
                   bgColor={"transparent"}
@@ -88,7 +81,7 @@ const SearchForm: React.FC<Props> = ({
           </Field>
         </Fieldset.Content>
       </Fieldset.Root>
-    </form>
+    </Box>
   );
 };
 

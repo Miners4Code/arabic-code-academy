@@ -52,7 +52,11 @@ export default function FeedbackCard() {
           base: "16",
           md: "28",
         }}
-        mb={10}
+        my={{
+          lg: 20,
+          md: 30,
+          base: 15,
+        }}
       >
         <Carousel
           slidesToShow={{
@@ -61,9 +65,9 @@ export default function FeedbackCard() {
             lg: 3,
           }}
           arrowGaps={{
-            base: "40px",
-            md: "80px",
-            lg: "90px",
+            base: "-40px",
+            md: "-80px",
+            lg: "-90px",
           }}
         >
           {cards.map((item) => (

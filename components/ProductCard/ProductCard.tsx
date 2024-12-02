@@ -48,11 +48,6 @@ const ProductCard: React.FC<Props> = ({
           {icon}
         </Card.Header>
         <Box
-          paddingX={{
-            base: "26px",
-            md: "19px",
-            lg: "28px",
-          }}
           paddingTop={{
             lg: "40px",
             md: "27px",
@@ -64,10 +59,38 @@ const ProductCard: React.FC<Props> = ({
             base: "6px",
           }}
         >
-          <Card.Body color={"aca_primary.400"}>
-            <Box display={"flex"} justifyContent={"space-between"}>
+          <Card.Body
+            color={"aca_primary.400"}
+            paddingX={{
+              base: "26px",
+              md: "19px",
+              lg: "28px",
+            }}
+            textAlign={{
+              md: "start",
+              base: "center"
+            }}
+          >
+            <Box
+              display={"flex"}
+              justifyContent={{ 
+                md: "space-between",
+                base: "center"
+              }}
+              pos={"relative"}
+            >
               <Text as={"h3"}>{title}</Text>
-              {!soon && <Text as={"h3"}>${price}</Text>}
+              {!soon && (
+                <Text
+                  as={"span"}
+                  fontSize={"22px"}
+                  fontWeight={700}
+                  pos={"absolute"}
+                  left={0}
+                >
+                  ${price}
+                </Text>
+              )}
             </Box>
             <Box paddingBottom={"18px"}>
               <Text>{trainer}</Text>
@@ -77,7 +100,11 @@ const ProductCard: React.FC<Props> = ({
               </Text>
             </Box>
           </Card.Body>
-          <Card.Footer display="flex" justifyContent="center">
+          <Card.Footer display="flex" justifyContent="center" paddingX={{
+            xl: "20px",
+            lg: "10px",
+            base: "20px"
+          }}>
             <Button
               width={"50%"}
               height={"55px"}

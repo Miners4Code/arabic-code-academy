@@ -19,6 +19,11 @@ interface Props {
     md: string;
     lg: string;
   };
+  width?: {
+    base?: string;
+    md?: string;
+    lg?: string;
+  };
 }
 
 const Carousel: React.FC<Props> = ({
@@ -28,12 +33,13 @@ const Carousel: React.FC<Props> = ({
     base: 1,
     md: 1,
     lg: 1,
-    xl: 0
+    xl: 0,
   },
   arrowGaps,
+  width,
 }) => {
   return (
-    <Box>
+    <Box mx={"auto"} width={width}>
       <Slider
         infinite
         speed={500}
@@ -43,8 +49,8 @@ const Carousel: React.FC<Props> = ({
           {
             breakpoint: 1500,
             settings: {
-              slidesToShow: slidesToShow.lg
-            }
+              slidesToShow: slidesToShow.lg,
+            },
           },
           {
             breakpoint: 1024,

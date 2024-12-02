@@ -35,8 +35,14 @@ const UpcomingSlider = ({ children }: Props) => {
           md: "20px",
           lg: "50px",
         }}
-        marginX={"3"}
-        paddingX={"3"}
+        marginX={{
+          base: "0px",
+          md: "3",
+        }}
+        paddingX={{
+          base: "0",
+          md: "3",
+        }}
       >
         <Heading
           as={"h3"}
@@ -58,15 +64,20 @@ const UpcomingSlider = ({ children }: Props) => {
       </Flex>
       <Carousel
         arrowGaps={{
-          base: "50px",
-          md: "100px",
-          lg: "90px",
+          base: "-50px",
+          md: "-100px",
+          lg: "-90px",
+        }}
+        width={{
+          base: "300px",
+          md: "auto",
+          lg: "auto",
         }}
         slidesToShow={{
           base: 1,
           md: 2,
           lg: 3,
-          xl: 4
+          xl: 4,
         }}
       >
         {children}

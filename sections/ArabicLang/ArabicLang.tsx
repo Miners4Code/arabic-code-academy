@@ -22,6 +22,9 @@ const ArabicLang = () => {
       paddingX={{
         lg: "50px",
       }}
+      paddingTop={{
+        base: "58px"
+      }}
       justify={"center"}
       align={"center"}
       gap={{

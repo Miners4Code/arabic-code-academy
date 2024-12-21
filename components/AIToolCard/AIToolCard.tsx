@@ -1,5 +1,5 @@
 import More from "@/icons/More";
-import { Box, Card, Text, Button, Flex } from "@chakra-ui/react";
+import { Box, Card, Text, Flex } from "@chakra-ui/react";
 import React from "react";
 import { AITool } from "../AIToolsList/AIToolsList";
 import ACAButton from "../ACAButton/ACAButton";

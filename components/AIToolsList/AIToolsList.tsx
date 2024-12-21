@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Box, Grid, GridItem, Text } from "@chakra-ui/react";
-import { getAITools } from "@/api/ai-tools";
+import React from "react";
+import { Grid, GridItem, Text } from "@chakra-ui/react";
 import AIToolCard from "../AIToolCard/AIToolCard";
 
 export interface AITool {
@@ -16,32 +15,14 @@ export interface AITool {
   description: string;
 }
 
-const AIToolsList = () => {
-  const [tools, setTools] = useState<AITool[]>([]);
-  const [error, setError] = useState("");
+interface Props {
+  tools: AITool[]; // Accept filtered tools as a prop
+}
 
-  useEffect(() => {
-    getAITools()
-      .then((response) => {
-        console.log(response.data);
-        setTools(response.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError("خطأ اثناء استرجاع البيانات");
-      });
-  }, []);
-
-  if (error) {
-    return (
-      <Box>
-        <Text color={"red.500"} textAlign={"center"} mt={"100px"}>
-          {error}
-        </Text>
-      </Box>
-    );
+const AIToolsList: React.FC<Props> = ({ tools }) => {
+  if (tools.length === 0) {
+    return <Text textAlign="center">لا توجد أدوات متاحة حالياً</Text>;
   }
-
 
   return (
     <Grid
@@ -61,15 +42,11 @@ const AIToolsList = () => {
       }}
       mx={"auto"}
     >
-      {tools.length > 0 ? (
-        tools.map((tool) => (
-          <GridItem key={tool.tool_id}>
-            <AIToolCard tool={tool} />
-          </GridItem>
-        ))
-      ) : (
-        <Text textAlign="center">تحميل...</Text>
-      )}
+      {tools.map((tool) => (
+        <GridItem key={tool.tool_id}>
+          <AIToolCard tool={tool} />
+        </GridItem>
+      ))}
     </Grid>
   );
 };
